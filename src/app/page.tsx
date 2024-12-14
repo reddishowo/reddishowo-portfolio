@@ -1,5 +1,4 @@
 import 'aos/dist/aos.css';
-import AOS from 'aos';
 import Navbar from "@/components/navbar";
 import HomePage from "@/components/homepage";
 import AboutSection from "@/components/aboutsection";
