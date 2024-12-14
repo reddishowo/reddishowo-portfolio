@@ -45,6 +45,7 @@ const ScrollToTop = () => {
             hover:bg-gray-700
             hover:scale-110
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+            z-50 // Menambahkan z-index yang lebih tinggi
           `}
           aria-label="Scroll to top"
         >
