@@ -11,7 +11,7 @@ interface SocialLinkProps {
 }
 
 const HomePage = () => {
-  const texts = ['Software Engineer', 'Web Developer', 'Tech Enthusiast'];
+  const texts = ['Software Engineer', 'Web Developer', 'Tech Enthusiast', 'Game Developer', 'Linux Enthusiast', 'Gamer'];
   const [currentText, setCurrentText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
@@ -75,7 +75,7 @@ const HomePage = () => {
               icon={<Github className="w-6 h-6" />} 
             />
             <SocialLink 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/farriel-arrianta/" 
               icon={<Linkedin className="w-6 h-6" />} 
             />
             <SocialLink 

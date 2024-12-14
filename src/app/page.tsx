@@ -3,6 +3,7 @@ import HomePage from "@/components/homepage";
 import AboutSection from "@/components/aboutsection";
 import ProjectsSection from "@/components/projectsection";
 import ContactSection from "@/components/contactsection";
+import ScrollToTop from '@/components/scrolltotop';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <AboutSection />
       <ProjectsSection />
       <ContactSection />
+      <ScrollToTop />
     </main>
   );
 }
