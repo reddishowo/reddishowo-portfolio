@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import emailjs from 'emailjs-com';
-import AOS from 'aos';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
