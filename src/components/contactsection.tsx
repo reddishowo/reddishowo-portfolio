@@ -23,15 +23,15 @@ const ContactSection = () => {
     e.preventDefault();
 
     emailjs.send(
-      'a',    // Your EmailJS service ID
-      'b',   // Your EmailJS template ID
+      'service_5ctv05b',    // Your EmailJS service ID
+      'template_ltifq6e',   // Your EmailJS template ID
       {
         from_name: formData.from_name, // Sender's name
         to_name: 'Farriel Arianta',    // Your name
         message: formData.message,
         email: formData.email          // Sender's email
       },
-      'c'             // Your EmailJS user ID
+      'XTHB-yaTFnW9PtGm4'             // Your EmailJS user ID
     )
     .then((response) => {
       console.log('Message sent successfully', response);
