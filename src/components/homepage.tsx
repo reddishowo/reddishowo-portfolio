@@ -1,9 +1,10 @@
-"use client";
+"use client"
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from './navbar';
 import { Github, Instagram, Linkedin } from 'lucide-react';
+import AOS from 'aos';
 
 interface SocialLinkProps {
   href: string;
@@ -11,6 +12,24 @@ interface SocialLinkProps {
 }
 
 const HomePage = () => {
+  useEffect(() => {
+    AOS.init({ 
+      duration: 800, 
+      offset: 120, // Adjust offset to trigger animations
+      easing: 'ease-in-out' // Optional: smoother animation
+    });
+
+    // Optional: Refresh AOS on scroll to ensure multiple triggers
+    const handleScroll = () => {
+      AOS.refresh();
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const texts = ['Software Engineer', 'Web Developer', 'Tech Enthusiast', 'Game Developer', 'Linux Enthusiast', 'Gamer'];
   const [currentText, setCurrentText] = useState('');
   const [textIndex, setTextIndex] = useState(0);
@@ -48,9 +67,13 @@ const HomePage = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
       
-      <div className="container mx-auto px-4 py-16 flex-grow flex items-center justify-center">
+      <div 
+        className="container mx-auto px-4 py-16 flex-grow flex items-center justify-center"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         <div className="text-center max-w-2xl">
-          <div className="mb-8">
+          <div className="mb-8" data-aos="zoom-in">
             <Image 
               src="/images/me.jpg" 
               alt="Profile" 
@@ -60,16 +83,28 @@ const HomePage = () => {
             />
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
+          <h1 
+            className="text-4xl md:text-5xl font-bold mb-4 text-gray-800"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             Farriel Arrianta
           </h1>
           
-          <p className="text-xl text-gray-600 mb-8">
+          <p 
+            className="text-xl text-gray-600 mb-8"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
             {currentText}
             <span className="blinking-cursor">|</span>
           </p>
           
-          <div className="flex justify-center space-x-6">
+          <div 
+            className="flex justify-center space-x-6"
+            data-aos="fade-up"
+            data-aos-delay="800"
+          >
             <SocialLink 
               href="https://github.com/reddishowo" 
               icon={<Github className="w-6 h-6" />} 

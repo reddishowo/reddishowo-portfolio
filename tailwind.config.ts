@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 export default {
@@ -9,8 +10,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: {
+          DEFAULT: "var(--background)", // Variabel utama
+          light: "#ffffff", // Fallback untuk light mode
+          dark: "#0a0a0a",  // Fallback untuk dark mode
+        },
+        foreground: {
+          DEFAULT: "var(--foreground)", // Variabel utama
+          light: "#171717",
+          dark: "#ededed",
+        },
       },
     },
   },
