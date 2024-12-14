@@ -4,7 +4,6 @@ import Image from "next/image";
 import Navbar from "./navbar";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import AOS from "aos";
-import { motion } from "framer-motion";
 
 interface SocialLinkProps {
   href: string;
@@ -57,9 +56,9 @@ const HomePage = () => {
 
   return (
     <section
-    id="home"
+      id="home"
       className="min-h-screen bg-gradient-to-b from-white to-blue-50 
-                 flex flex-col relative overflow-hidden"
+                 flex flex-col relative overflow-hidden mt-5 sm:mt-16"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -72,11 +71,10 @@ const HomePage = () => {
       <div className="container mx-auto max-w-5xl px-4 flex-grow flex items-center justify-center relative z-10">
         <div className="text-center">
           {/* Profile Image */}
-          <motion.div
+          <div
             className="flex justify-center mb-8"
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
+            data-aos="fade-up"
+            data-aos-duration="800"
           >
             <div className="w-64 h-64 relative">
               <div
@@ -94,45 +92,44 @@ const HomePage = () => {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+          <h1
+            data-aos="fade-up"
+            data-aos-duration="800"
             className="text-5xl font-bold mb-6 text-gray-800 
             bg-clip-text text-transparent 
             bg-gradient-to-r from-gray-700 to-gray-500"
           >
             Farriel Arrianta
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+          <p
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
             className="text-xl text-gray-600 mb-8"
           >
             {currentText}
             <span className="blinking-cursor text-blue-600">|</span>
-          </motion.p>
+          </p>
 
           {/* New About Me Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="300"
             className="max-w-xl mx-auto text-gray-700 mb-8 px-4"
           >
             Passionate about technology and innovation, I craft digital solutions 
             that bridge creativity with functionality. Always learning, always exploring 
             the evolving landscape of tech.
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="400"
             className="flex justify-center space-x-6"
           >
             <SocialLink
@@ -147,24 +144,26 @@ const HomePage = () => {
               href="https://instagram.com/_farriel_"
               icon={<Instagram className="w-6 h-6" />}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
+
+
 const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
-  <motion.a
+  <a
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}
     className="text-gray-600 hover:text-blue-600 transition-colors"
+    data-aos="zoom-in"
+    data-aos-duration="800"
   >
     {icon}
-  </motion.a>
+  </a>
 );
 
 export default HomePage;

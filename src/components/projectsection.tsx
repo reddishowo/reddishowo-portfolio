@@ -4,7 +4,6 @@ import React, { useEffect } from "react";
 import { Github, ExternalLink, Code } from "lucide-react";
 import Image from "next/image";
 import AOS from "aos";
-import { motion } from "framer-motion";
 
 interface Project {
   title: string;
@@ -23,15 +22,10 @@ const ProjectCard = ({
   index: number;
 }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.6,
-        delay: index * 0.2,
-        type: "spring",
-        stiffness: 100,
-      }}
+    <div
+      data-aos="fade-up"
+      data-aos-delay={`${index * 200}`}
+      data-aos-duration="600"
       className="bg-white rounded-2xl overflow-hidden 
                  shadow-lg hover:shadow-2xl transition-all duration-300 
                  transform hover:-translate-y-2 border border-gray-100"
@@ -87,16 +81,11 @@ const ProjectCard = ({
         </p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech, techIndex) => (
-            <motion.span
+            <span
               key={tech}
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                duration: 0.5,
-                delay: techIndex * 0.1,
-                type: "spring",
-                stiffness: 300,
-              }}
+              data-aos="fade-up"
+              data-aos-delay={`${techIndex * 100}`}
+              data-aos-duration="500"
               className="bg-gradient-to-r from-gray-100 to-gray-200 
               text-gray-800 text-xs px-3 py-1 
               rounded-full flex items-center gap-1 
@@ -104,11 +93,11 @@ const ProjectCard = ({
             >
               <Code size={12} className="mr-1" />
               {tech}
-            </motion.span>
+            </span>
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -187,16 +176,15 @@ const ProjectsSection = () => {
       </div>
 
       <div className="container mx-auto max-w-6xl px-4 relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+        <h2
+          data-aos="fade-up"
+          data-aos-duration="800"
           className="text-5xl font-bold text-center mb-16 text-gray-800 
           bg-clip-text text-transparent 
           bg-gradient-to-r from-gray-700 to-gray-500"
         >
           Projects
-        </motion.h2>
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />

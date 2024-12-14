@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import emailjs from 'emailjs-com';
+import AOS from 'aos';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -50,12 +51,18 @@ const ContactSection = () => {
         <div className="absolute top-10 left-10 w-32 h-32 bg-gray-300 rounded-full filter blur-2xl"></div>
         <div className="absolute bottom-10 right-10 w-48 h-48 bg-gray-400 rounded-full filter blur-2xl"></div>
       </div>
-      <div className="container mx-auto max-w-4xl px-4 relative z-10"> {/* Added relative z-10 */}
-        <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
+      <div className="container mx-auto max-w-4xl px-4 relative z-10">
+        <h2 
+          data-aos="fade-up" 
+          data-aos-duration="800" 
+          className="text-5xl font-bold text-center mb-12 text-gray-800">
           Contact Me
         </h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div 
+            data-aos="fade-right" 
+            data-aos-duration="800" 
+            data-aos-delay="200">
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-6 text-gray-800">
                 Contact Information
@@ -76,7 +83,10 @@ const ContactSection = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div 
+            data-aos="fade-left" 
+            data-aos-duration="800" 
+            data-aos-delay="400">
             <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-lg shadow-md">
               <div>
                 <label htmlFor="from_name" className="block text-gray-700 mb-2 font-medium">Name</label>

@@ -2,26 +2,20 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import AOS from "aos";
-import { motion } from "framer-motion";
 import { Star, Code, Globe } from "lucide-react";
 
 const SkillBadge = ({ skill, delay }: { skill: string; delay: number }) => (
-  <motion.span
-    initial={{ opacity: 0, scale: 0.5 }}
-    animate={{ opacity: 1, scale: 1 }}
-    transition={{
-      duration: 0.5,
-      delay: delay / 1000,
-      type: "spring",
-      stiffness: 300,
-    }}
+  <span
+    data-aos="fade-up"
+    data-aos-delay={delay}
+    data-aos-duration="500"
     className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 
     text-xs px-3 py-1 rounded-full flex items-center gap-1 
     shadow-md hover:shadow-lg transition-shadow"
   >
     <Code size={12} className="mr-1" />
     {skill}
-  </motion.span>
+  </span>
 );
 
 const AboutSection = () => {
@@ -67,10 +61,10 @@ const AboutSection = () => {
       <div className="container mx-auto max-w-5xl px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+          <div
+            data-aos="fade-left"
+            data-aos-duration="800"
+            className="text-content"
           >
             <h2
               className="text-5xl font-bold mb-6 text-gray-800 
@@ -105,14 +99,13 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Profile Image */}
-          <motion.div
+          <div
+            data-aos="fade-right"
+            data-aos-duration="800"
             className="flex justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
           >
             <div className="w-80 h-80 relative">
               <div
@@ -130,7 +123,7 @@ const AboutSection = () => {
                 />
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
