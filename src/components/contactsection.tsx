@@ -13,9 +13,9 @@ const ContactSection = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -29,19 +29,19 @@ const ContactSection = () => {
         from_name: formData.from_name, // Sender's name
         to_name: 'Farriel Arianta',    // Your name
         message: formData.message,
-        email: formData.email          // Sender's email
+        email: formData.email,         // Sender's email
       },
       'XTHB-yaTFnW9PtGm4'             // Your EmailJS user ID
     )
-    .then((response) => {
-      console.log('Message sent successfully', response);
-      alert('Your message has been sent!');
-      setFormData({ from_name: '', email: '', message: '' }); // Reset form
-    })
-    .catch((error) => {
-      console.error('Error sending message:', error);
-      alert('Failed to send message. Please try again later.');
-    });
+      .then((response) => {
+        console.log('Message sent successfully', response);
+        alert('Your message has been sent!');
+        setFormData({ from_name: '', email: '', message: '' }); // Reset form
+      })
+      .catch((error) => {
+        console.error('Error sending message:', error);
+        alert('Failed to send message. Please try again later.');
+      });
   };
 
   return (
@@ -50,7 +50,7 @@ const ContactSection = () => {
         <div className="absolute top-10 left-10 w-32 h-32 bg-gray-300 rounded-full filter blur-2xl"></div>
         <div className="absolute bottom-10 right-10 w-48 h-48 bg-gray-400 rounded-full filter blur-2xl"></div>
       </div>
-      <div className="container mx-auto max-w-4xl px-4">
+      <div className="container mx-auto max-w-4xl px-4 relative z-10"> {/* Added relative z-10 */}
         <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
           Contact Me
         </h2>
