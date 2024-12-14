@@ -16,7 +16,7 @@ const ProjectsSection = () => {
       title: "Portfolio Website",
       description: "Modern, responsive portfolio website built with Next.js and Tailwind CSS.",
       technologies: ["Next.js", "React", "Tailwind CSS"],
-      githubLink: "https://github.com",
+      githubLink: "https://github.com/reddishowo/reddishowo-portfolio",
       liveLink: "https://yourportfolio.com",
       image: "/images/portfolio_webpage.png"
     },

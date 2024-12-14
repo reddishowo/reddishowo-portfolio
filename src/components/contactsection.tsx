@@ -2,10 +2,11 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    from_name: '',
     email: '',
     message: ''
   });
@@ -20,8 +21,27 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic
-    console.log(formData);
+
+    emailjs.send(
+      'a',    // Your EmailJS service ID
+      'b',   // Your EmailJS template ID
+      {
+        from_name: formData.from_name, // Sender's name
+        to_name: 'Farriel Arianta',    // Your name
+        message: formData.message,
+        email: formData.email          // Sender's email
+      },
+      'c'             // Your EmailJS user ID
+    )
+    .then((response) => {
+      console.log('Message sent successfully', response);
+      alert('Your message has been sent!');
+      setFormData({ from_name: '', email: '', message: '' }); // Reset form
+    })
+    .catch((error) => {
+      console.error('Error sending message:', error);
+      alert('Failed to send message. Please try again later.');
+    });
   };
 
   return (
@@ -55,12 +75,12 @@ const ContactSection = () => {
           <div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-gray-700 mb-2">Name</label>
+                <label htmlFor="from_name" className="block text-gray-700 mb-2">Name</label>
                 <input
                   type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
+                  id="from_name"
+                  name="from_name"
+                  value={formData.from_name}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
                   required

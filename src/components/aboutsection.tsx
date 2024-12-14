@@ -35,7 +35,7 @@ const AboutSection = () => {
           <div className="flex justify-center">
             <div className="w-64 h-64 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
               <img 
-                src="/api/placeholder/300/300" 
+                src="/images/me2.jpg" 
                 alt="Profile" 
                 className="w-full h-full object-cover"
               />
