@@ -1,5 +1,6 @@
-import React from 'react';
-import { Github, ExternalLink } from 'lucide-react';
+import React from "react";
+import { Github, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 interface Project {
   title: string;
@@ -14,19 +15,21 @@ const ProjectsSection = () => {
   const projects: Project[] = [
     {
       title: "Portfolio Website",
-      description: "Modern, responsive portfolio website built with Next.js and Tailwind CSS.",
+      description:
+        "Modern, responsive portfolio website built with Next.js and Tailwind CSS.",
       technologies: ["Next.js", "React", "Tailwind CSS"],
       githubLink: "https://github.com/reddishowo/reddishowo-portfolio",
       liveLink: "https://yourportfolio.com",
-      image: "/images/portfolio_webpage.png"
+      image: "/images/portfolio_webpage.png",
     },
     {
       title: "Tailor-Website",
-      description: "Full-stack e-commerce application to create and watch product (clothing) listing real-time.",
+      description:
+        "Full-stack e-commerce application to create and watch product (clothing) listing real-time.",
       technologies: ["Vue", "Laravel", "MySQL", "Tailwind CSS"],
       githubLink: "https://github.com/reddishowo/tailor-web",
-      image: "/images/tailor_webpage.png"
-    }
+      image: "/images/tailor_webpage.png",
+    },
   ];
 
   return (
@@ -37,25 +40,29 @@ const ProjectsSection = () => {
         </h2>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
             >
               <div className="h-48 overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover"
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={640} // Sesuaikan ukuran dengan kebutuhan
+                  height={192}
+                  className="object-cover object-top"
                 />
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-center mb-4">
-                  <h3 className="text-xl font-semibold text-gray-800">{project.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {project.title}
+                  </h3>
                   <div className="flex space-x-2">
                     {project.githubLink && (
-                      <a 
-                        href={project.githubLink} 
-                        target="_blank" 
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-500 hover:text-black"
                       >
@@ -63,9 +70,9 @@ const ProjectsSection = () => {
                       </a>
                     )}
                     {project.liveLink && (
-                      <a 
-                        href={project.liveLink} 
-                        target="_blank" 
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-500 hover:text-black"
                       >
@@ -77,8 +84,8 @@ const ProjectsSection = () => {
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex} 
+                    <span
+                      key={techIndex}
                       className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full"
                     >
                       {tech}

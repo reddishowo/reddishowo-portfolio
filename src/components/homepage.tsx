@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from './navbar';
-import { Github, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 
 interface SocialLinkProps {
   href: string;
