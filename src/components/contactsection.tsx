@@ -45,74 +45,78 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="min-h-screen bg-white py-16">
+    <section id="contact" className="min-h-screen bg-gradient-to-b from-white to-blue-50 py-16 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10">
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gray-300 rounded-full filter blur-2xl"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gray-400 rounded-full filter blur-2xl"></div>
+      </div>
       <div className="container mx-auto max-w-4xl px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
           Contact Me
         </h2>
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-2xl font-semibold mb-6 text-gray-800">
                 Contact Information
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-center text-gray-600">
-                  <Mail className="w-5 h-5 mr-3" />
+              <div className="space-y-6">
+                <div className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+                  <Mail className="w-6 h-6 mr-3 text-gray-800" />
                   <span>farrielarrianta@gmail.com</span>
                 </div>
-                <div className="flex items-center text-gray-600">
-                  <Phone className="w-5 h-5 mr-3" />
+                <div className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+                  <Phone className="w-6 h-6 mr-3 text-gray-800" />
                   <span>+62 881 601 5821</span>
                 </div>
-                <div className="flex items-center text-gray-600">
-                  <MapPin className="w-5 h-5 mr-3" />
+                <div className="flex items-center text-gray-600 hover:text-gray-800 transition-colors">
+                  <MapPin className="w-6 h-6 mr-3 text-gray-800" />
                   <span>Malang, Indonesia</span>
                 </div>
               </div>
             </div>
           </div>
           <div>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-lg shadow-md">
               <div>
-                <label htmlFor="from_name" className="block text-gray-700 mb-2">Name</label>
+                <label htmlFor="from_name" className="block text-gray-700 mb-2 font-medium">Name</label>
                 <input
                   type="text"
                   id="from_name"
                   name="from_name"
                   value={formData.from_name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-gray-700 mb-2">Email</label>
+                <label htmlFor="email" className="block text-gray-700 mb-2 font-medium">Email</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-gray-700 mb-2">Message</label>
+                <label htmlFor="message" className="block text-gray-700 mb-2 font-medium">Message</label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-300"
                   required
                 ></textarea>
               </div>
               <button 
                 type="submit" 
-                className="w-full bg-gray-800 text-white py-3 rounded-md hover:bg-gray-700 transition-colors"
+                className="w-full bg-gray-800 text-white py-3 rounded-md hover:bg-gray-700 transition-colors focus:ring-2 focus:ring-gray-600"
               >
                 Send Message
               </button>

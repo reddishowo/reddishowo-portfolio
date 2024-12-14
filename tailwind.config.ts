@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 export default {
@@ -11,17 +10,55 @@ export default {
     extend: {
       colors: {
         background: {
-          DEFAULT: "var(--background)", // Variabel utama
-          light: "#ffffff", // Fallback untuk light mode
-          dark: "#0a0a0a",  // Fallback untuk dark mode
+          DEFAULT: "var(--background)",
+          light: "#ffffff",
+          dark: "#0a0a0a",
         },
         foreground: {
-          DEFAULT: "var(--foreground)", // Variabel utama
+          DEFAULT: "var(--foreground)",
           light: "#171717",
           dark: "#ededed",
         },
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("daisyui"), // Tambahkan plugin DaisyUI
+  ],
+  daisyui: {
+    themes: [
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "lofi",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+      "cmyk",
+      "autumn",
+      "business",
+      "acid",
+      "lemonade",
+      "night",
+      "coffee",
+      "winter",
+      "dim",
+      "nord",
+      "sunset",
+    ],
+  },
 } satisfies Config;
