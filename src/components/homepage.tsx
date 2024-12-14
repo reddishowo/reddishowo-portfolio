@@ -129,7 +129,7 @@ const HomePage = () => {
           <div
             data-aos="fade-up"
             data-aos-duration="800"
-            data-aos-delay="400"
+            data-aos-delay="300"
             className="flex justify-center space-x-6"
           >
             <SocialLink
