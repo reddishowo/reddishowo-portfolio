@@ -10,9 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Reddishowo",
-  description: "Professional portfolio showcasing projects and skills",
+  description: "Farriel Arrianta - Portfolio Website ",
   icons: {
-    icon: '/rlogo.png'
+    icon: '/favicon.ico'
   }
 };
 

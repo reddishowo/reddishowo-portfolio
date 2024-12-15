@@ -16,8 +16,8 @@ const HomePage = () => {
   }, []);
 
   const texts = [
-    "Cyber Security",
     "Software Engineer",
+    "Cyber Security",
     "Web Developer",
     "Tech Enthusiast",
     "Game Developer",
@@ -58,7 +58,7 @@ const HomePage = () => {
     <section
       id="home"
       className="min-h-screen bg-gradient-to-b from-white to-blue-50 
-                 flex flex-col relative overflow-hidden mt-5 sm:mt-16"
+                 flex flex-col relative overflow-hidden mt-1 sm:mt-16"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -116,9 +116,6 @@ const HomePage = () => {
 
           {/* New About Me Section */}
           <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="300"
             className="max-w-xl mx-auto text-gray-700 mb-8 px-4"
           >
             Passionate about technology and innovation, I craft digital solutions 
@@ -127,9 +124,6 @@ const HomePage = () => {
           </div>
 
           <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            data-aos-delay="300"
             className="flex justify-center space-x-6"
           >
             <SocialLink
