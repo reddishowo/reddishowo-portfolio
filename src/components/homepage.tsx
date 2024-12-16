@@ -77,9 +77,9 @@ const HomePage = () => {
           >
             <div className="w-64 h-64 relative">
               <div
-                className="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-full blur-xl opacity-50 animate-pulse"
+                className="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-full blur-xl opacity-50 animate-pulse mt-10"
               ></div>
-              <div className="relative z-10 w-full h-full bg-base-100 p-2 rounded-full shadow-2xl">
+              <div className="relative z-10 w-full h-full bg-base-100 p-2 rounded-full shadow-2xl mt-10">
                 <Image
                   src="/images/me.jpg"
                   alt="Profile"
