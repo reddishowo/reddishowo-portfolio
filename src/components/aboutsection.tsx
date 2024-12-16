@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import AOS from "aos";
@@ -49,7 +50,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-gradient-to-b from-white to-blue-50 
+      className="min-h-screen bg-base-100 text-base-content 
                  flex items-center py-16 relative overflow-hidden"
     >
       {/* Background decorative elements */}
@@ -67,13 +68,13 @@ const AboutSection = () => {
             className="text-content"
           >
             <h2
-              className="text-5xl font-bold mb-6 text-gray-800 
+              className="text-5xl font-bold mb-6 text-primary 
                bg-clip-text text-transparent 
                bg-gradient-to-r from-gray-700 to-gray-500"
             >
               About Me
             </h2>
-            <p className="text-gray-600 mb-6 leading-relaxed text-lg">
+            <p className="text-base-content mb-6 leading-relaxed text-lg">
               <Star className="inline-block mr-2 text-yellow-500" />
               I&#39;m a passionate software engineer from University of
               Muhammadiyah Malang, dedicated to crafting elegant and minimalist
@@ -83,7 +84,7 @@ const AboutSection = () => {
 
             <div className="mt-8">
               <h3
-                className="text-2xl font-semibold mb-4 text-gray-800 
+                className="text-2xl font-semibold mb-4 text-primary 
                             flex items-center"
               >
                 <Globe className="mr-2 text-blue-500" />
@@ -112,7 +113,7 @@ const AboutSection = () => {
                 className="absolute -inset-4 bg-gradient-to-r from-gray-800 to-gray-600 
                               rounded-xl blur-xl opacity-50 animate-pulse"
               ></div>
-              <div className="relative z-10 w-full h-full bg-white p-2 rounded-xl shadow-2xl">
+              <div className="relative z-10 w-full h-full bg-base-100 p-2 rounded-xl shadow-2xl">
                 <Image
                   src="/images/me2.jpg"
                   alt="Profile"

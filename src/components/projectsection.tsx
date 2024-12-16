@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Github, ExternalLink, Code } from "lucide-react";
 import Image from "next/image";
 import AOS from "aos";
@@ -26,27 +26,28 @@ const ProjectCard = ({
       data-aos="fade-up"
       data-aos-delay={`${index * 200}`}
       data-aos-duration="600"
-      className="bg-white rounded-2xl overflow-hidden 
-                 shadow-lg hover:shadow-2xl transition-all duration-300 
-                 transform hover:-translate-y-2 border border-gray-100"
+      className="group card bg-base-100 shadow-lg hover:shadow-2xl 
+      transition-all duration-300 transform hover:-translate-y-3 
+      border border-base-content/10 rounded-2xl 
+      dark:border-base-content/20 
+      dark:hover:border-base-content/30
+      hover:border-base-content/20
+      dark:bg-gray-800/50 dark:backdrop-blur-sm"
     >
-      <div className="h-52 overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 z-10"></div>
+      <div className="h-56 overflow-hidden relative rounded-t-2xl">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-base-content/10 z-10"></div>
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className="object-cover object-top"
+          className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
           priority
         />
       </div>
-      <div className="p-6">
-        <div className="flex justify-between items-center mb-4">
-          <h3
-            className="text-2xl font-bold text-gray-800 
-               bg-clip-text text-transparent 
-               bg-gradient-to-r from-gray-700 to-gray-500"
-          >
+      <div className="card-body p-6 space-y-4">
+        <div className="flex justify-between items-center">
+          <h3 className="card-title text-xl font-bold text-base-content 
+          dark:text-white/90 transition-colors">
             {project.title}
           </h3>
           <div className="flex space-x-2">
@@ -55,9 +56,10 @@ const ProjectCard = ({
                 href={project.githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 
-                           transition-colors duration-300 
-                           hover:scale-110 hover:text-blue-600"
+                className="text-base-content/70 dark:text-white/60 
+                transition-all duration-300 
+                hover:scale-110 hover:text-primary 
+                dark:hover:text-primary"
               >
                 <Github className="w-6 h-6" />
               </a>
@@ -67,28 +69,28 @@ const ProjectCard = ({
                 href={project.liveLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 
-                           transition-colors duration-300 
-                           hover:scale-110 hover:text-green-600"
+                className="text-base-content/70 dark:text-white/60 
+                transition-all duration-300 
+                hover:scale-110 hover:text-secondary 
+                dark:hover:text-secondary"
               >
                 <ExternalLink className="w-6 h-6" />
               </a>
             )}
           </div>
         </div>
-        <p className="text-gray-600 mb-4 leading-relaxed">
+        <p className="text-base-content/70 dark:text-white/70 
+        leading-relaxed mb-2">
           {project.description}
         </p>
         <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, techIndex) => (
+          {project.technologies.map((tech) => (
             <span
               key={tech}
-              data-aos="fade-up"
-              data-aos-delay={`${techIndex * 100}`}
-              data-aos-duration="500"
               className="bg-gradient-to-r from-gray-100 to-gray-200 
-              text-gray-800 text-xs px-3 py-1 
-              rounded-full flex items-center gap-1 
+              dark:from-gray-700 dark:to-gray-600
+              text-gray-800 dark:text-white/80
+              text-xs px-3 py-1 rounded-full flex items-center gap-1 
               shadow-md hover:shadow-lg transition-shadow"
             >
               <Code size={12} className="mr-1" />
@@ -102,7 +104,14 @@ const ProjectCard = ({
 };
 
 const ProjectsSection = () => {
+  const [theme] = useState('light');
+
+
   useEffect(() => {
+    // Initial theme setup
+    document.documentElement.setAttribute('data-theme', theme);
+
+    // AOS initialization
     AOS.init({
       duration: 800,
       offset: 120,
@@ -118,7 +127,7 @@ const ProjectsSection = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [theme]);
 
   const projects: Project[] = [
     {
@@ -166,8 +175,8 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gradient-to-b from-white to-blue-50 py-16 
-                 relative overflow-hidden"
+      className="min-h-screen bg-base-100 text-base-content 
+                 py-16 relative overflow-hidden"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -179,9 +188,9 @@ const ProjectsSection = () => {
         <h2
           data-aos="fade-up"
           data-aos-duration="800"
-          className="text-5xl font-bold text-center mb-16 text-gray-800 
-          bg-clip-text text-transparent 
-          bg-gradient-to-r from-gray-700 to-gray-500"
+          className="text-5xl font-bold text-center mb-16 text-primary 
+           bg-clip-text text-transparent 
+           bg-gradient-to-r from-gray-700 to-gray-500"
         >
           Projects
         </h2>
