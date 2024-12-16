@@ -7,7 +7,7 @@ import { Star, Code, Globe } from "lucide-react";
 
 const SkillBadge = ({ skill, delay }: { skill: string; delay: number }) => (
   <span
-    data-aos="fade-up"
+    data-aos="fade-left"
     data-aos-delay={delay}
     data-aos-duration="500"
     className="bg-primary text-primary-content 
