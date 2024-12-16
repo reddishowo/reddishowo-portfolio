@@ -57,13 +57,12 @@ const HomePage = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-base-100 text-base-content 
-                 flex flex-col relative overflow-hidden mt-1 sm:mt-16"
+      className="min-h-screen bg-base-100 text-base-content flex flex-col relative overflow-hidden mt-1 sm:mt-16"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gray-300 rounded-full filter blur-2xl"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gray-400 rounded-full filter blur-2xl"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-secondary rounded-full filter blur-2xl"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-accent rounded-full filter blur-2xl"></div>
       </div>
 
       <Navbar />
@@ -78,8 +77,7 @@ const HomePage = () => {
           >
             <div className="w-64 h-64 relative">
               <div
-                className="absolute -inset-4 bg-gradient-to-r from-gray-800 to-gray-400 
-                              rounded-full blur-xl opacity-50 animate-pulse"
+                className="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-full blur-xl opacity-50 animate-pulse"
               ></div>
               <div className="relative z-10 w-full h-full bg-base-100 p-2 rounded-full shadow-2xl">
                 <Image
@@ -95,14 +93,13 @@ const HomePage = () => {
           </div>
 
           <h1
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="text-5xl font-bold mb-6 text-primary 
-            bg-clip-text text-transparent 
-            bg-gradient-to-r from-gray-700 to-gray-500"
-          >
-            Farriel Arrianta
-          </h1>
+  data-aos="fade-up"
+  data-aos-duration="800"
+  className="text-5xl font-bold mb-6 text-primary"
+>
+  Farriel Arrianta
+</h1>
+
 
           <p
             data-aos="fade-up"
@@ -111,10 +108,10 @@ const HomePage = () => {
             className="text-xl text-base-content mb-8"
           >
             {currentText}
-            <span className="blinking-cursor text-blue-600">|</span>
+            <span className="blinking-cursor text-primary">|</span>
           </p>
 
-          {/* New About Me Section */}
+          {/* About Me Section */}
           <div
             className="max-w-xl mx-auto text-base-content mb-8 px-4"
           >
@@ -150,7 +147,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
     href={href}
     target="_blank"
     rel="noopener noreferrer"
-    className="text-base-content hover:text-blue-600 transition-colors"
+    className="text-base-content hover:text-primary transition-colors"
     data-aos="zoom-in"
     data-aos-duration="800"
   >

@@ -10,7 +10,7 @@ const SkillBadge = ({ skill, delay }: { skill: string; delay: number }) => (
     data-aos="fade-up"
     data-aos-delay={delay}
     data-aos-duration="500"
-    className="bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800 
+    className="bg-primary text-primary-content 
     text-xs px-3 py-1 rounded-full flex items-center gap-1 
     shadow-md hover:shadow-lg transition-shadow"
   >
@@ -55,8 +55,8 @@ const AboutSection = () => {
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gray-300 rounded-full filter blur-2xl"></div>
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-gray-400 rounded-full filter blur-2xl"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-neutral rounded-full filter blur-2xl"></div>
+        <div className="absolute bottom-10 right-10 w-48 h-48 bg-neutral-focus rounded-full filter blur-2xl"></div>
       </div>
 
       <div className="container mx-auto max-w-5xl px-4 relative z-10">
@@ -67,15 +67,11 @@ const AboutSection = () => {
             data-aos-duration="800"
             className="text-content"
           >
-            <h2
-              className="text-5xl font-bold mb-6 text-primary 
-               bg-clip-text text-transparent 
-               bg-gradient-to-r from-gray-700 to-gray-500"
-            >
+            <h2 className="text-5xl font-bold mb-6 text-primary">
               About Me
             </h2>
             <p className="text-base-content mb-6 leading-relaxed text-lg">
-              <Star className="inline-block mr-2 text-yellow-500" />
+              <Star className="inline-block mr-2 text-warning" />
               I&#39;m a passionate software engineer from University of
               Muhammadiyah Malang, dedicated to crafting elegant and minimalist
               web experiences. My expertise spans full-stack development, with a
@@ -87,7 +83,7 @@ const AboutSection = () => {
                 className="text-2xl font-semibold mb-4 text-primary 
                             flex items-center"
               >
-                <Globe className="mr-2 text-blue-500" />
+                <Globe className="mr-2 text-info" />
                 Technical Skills
               </h3>
               <div className="flex flex-wrap gap-2">
@@ -110,7 +106,7 @@ const AboutSection = () => {
           >
             <div className="w-80 h-80 relative">
               <div
-                className="absolute -inset-4 bg-gradient-to-r from-gray-800 to-gray-600 
+                className="absolute -inset-4 bg-neutral-focus 
                               rounded-xl blur-xl opacity-50 animate-pulse"
               ></div>
               <div className="relative z-10 w-full h-full bg-base-100 p-2 rounded-xl shadow-2xl">

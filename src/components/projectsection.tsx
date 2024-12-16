@@ -87,11 +87,9 @@ const ProjectCard = ({
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="bg-gradient-to-r from-gray-100 to-gray-200 
-              dark:from-gray-700 dark:to-gray-600
-              text-gray-800 dark:text-white/80
-              text-xs px-3 py-1 rounded-full flex items-center gap-1 
-              shadow-md hover:shadow-lg transition-shadow"
+              className="bg-primary text-primary-content 
+    text-xs px-3 py-1 rounded-full flex items-center gap-1 
+    shadow-md hover:shadow-lg transition-shadow"
             >
               <Code size={12} className="mr-1" />
               {tech}
@@ -188,9 +186,8 @@ const ProjectsSection = () => {
         <h2
           data-aos="fade-up"
           data-aos-duration="800"
-          className="text-5xl font-bold text-center mb-16 text-primary 
-           bg-clip-text text-transparent 
-           bg-gradient-to-r from-gray-700 to-gray-500"
+          className="text-5xl bg-primary text-primary-content font-bold text-center mb-16
+           bg-clip-text text-transparent"
         >
           Projects
         </h2>
