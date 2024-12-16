@@ -57,7 +57,7 @@ const HomePage = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-base-100 text-base-content flex flex-col relative overflow-hidden mt-1 sm:mt-16"
+      className="min-h-screen bg-base-100 text-base-content flex flex-col relative overflow-hidden mt-10 sm:mt-16"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -67,7 +67,7 @@ const HomePage = () => {
 
       <Navbar />
 
-      <div className="container mx-auto max-w-5xl px-4 flex-grow flex items-center justify-center relative z-10">
+      <div className="container mx-auto max-w-5xl px-4 flex-grow flex items-center justify-center relative z-10 mt-10">
         <div className="text-center">
           {/* Profile Image */}
           <div
@@ -79,7 +79,7 @@ const HomePage = () => {
               <div
                 className="absolute -inset-4 bg-gradient-to-r from-secondary to-accent rounded-full blur-xl opacity-50 animate-pulse mt-10"
               ></div>
-              <div className="relative z-10 w-full h-full bg-base-100 p-2 rounded-full shadow-2xl mt-10">
+              <div className="relative z-10 w-full h-full bg-base-100 p-2 rounded-full shadow-2xl mt-2">
                 <Image
                   src="/images/me.jpg"
                   alt="Profile"
@@ -95,7 +95,7 @@ const HomePage = () => {
           <h1
   data-aos="fade-up"
   data-aos-duration="800"
-  className="text-5xl font-bold mb-6 text-primary"
+  className="text-5xl font-bold mb-6 text-primary mt-10"
 >
   Farriel Arrianta
 </h1>
