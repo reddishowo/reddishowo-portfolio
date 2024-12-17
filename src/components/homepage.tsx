@@ -57,7 +57,7 @@ const HomePage = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-base-100 text-base-content flex flex-col relative overflow-hidden mt-10 sm:mt-16"
+      className="min-h-screen bg-base-100 text-base-content flex flex-col relative overflow-hidden mt-2 sm:mt-5"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
