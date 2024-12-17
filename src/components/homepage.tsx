@@ -97,7 +97,7 @@ const HomePage = () => {
   data-aos-duration="800"
   className="text-5xl font-bold mb-6 text-primary mt-10"
 >
-  Farriel Arrianta
+  Farriel Arrianta A. P.
 </h1>
 
 
@@ -113,6 +113,9 @@ const HomePage = () => {
 
           {/* About Me Section */}
           <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="200"
             className="max-w-xl mx-auto text-base-content mb-8 px-4"
           >
             Passionate about technology and innovation, I craft digital solutions 
@@ -121,6 +124,9 @@ const HomePage = () => {
           </div>
 
           <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay="600"
             className="flex justify-center space-x-6"
           >
             <SocialLink
