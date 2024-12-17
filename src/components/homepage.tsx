@@ -22,7 +22,10 @@ const HomePage = () => {
     "Tech Enthusiast",
     "Game Developer",
     "Linux Enthusiast",
-    "Gamer",
+    "Data Science",
+    "Computer Network",
+    "Operating System",
+    "Gamer"
   ];
   const [currentText, setCurrentText] = useState("");
   const [textIndex, setTextIndex] = useState(0);
@@ -57,7 +60,7 @@ const HomePage = () => {
   return (
     <section
       id="home"
-      className="min-h-screen bg-base-100 text-base-content flex flex-col relative overflow-hidden mt-2 sm:mt-5"
+      className="min-h-screen bg-base-100 text-base-content flex flex-col relative overflow-hidden mt-10 sm:mt-5"
     >
       {/* Background decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
@@ -97,7 +100,7 @@ const HomePage = () => {
   data-aos-duration="800"
   className="text-5xl font-bold mb-6 text-primary mt-10"
 >
-  Farriel Arrianta A. P.
+  Farriel Arrianta
 </h1>
 
 
@@ -116,17 +119,16 @@ const HomePage = () => {
             data-aos="fade-up"
             data-aos-duration="800"
             data-aos-delay="200"
-            className="max-w-xl mx-auto text-base-content mb-8 px-4"
+            className="max-w-xl mx-auto text-base-content mb-5 px-4"
           >
-            Passionate about technology and innovation, I craft digital solutions 
-            that bridge creativity with functionality. Always learning, always exploring 
+            Passionate about technology and innovation. Always learning, always exploring 
             the evolving landscape of tech.
           </div>
 
           <div
             data-aos="fade-up"
             data-aos-duration="800"
-            data-aos-delay="600"
+            data-aos-delay="200"
             className="flex justify-center space-x-6"
           >
             <SocialLink
@@ -154,8 +156,6 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => (
     target="_blank"
     rel="noopener noreferrer"
     className="text-base-content hover:text-primary transition-colors"
-    data-aos="zoom-in"
-    data-aos-duration="800"
   >
     {icon}
   </a>
