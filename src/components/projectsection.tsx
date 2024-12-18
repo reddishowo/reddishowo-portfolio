@@ -146,9 +146,16 @@ const ProjectsSection = () => {
       image: "/images/tailor_webpage.png",
     },
     {
-      title: "Dressmaker-App",
+      title: "Event Management (on progress)",
+      description: "Eventify - Simplify Your Event Management",
+      technologies: ["Next.js", "React", "Tailwind CSS", "Laravel", "Axios", "MySQL"],
+      githubLink: "https://github.com/reddishowo/event-management-web",
+      image: "/images/eventmanagementweb.png",
+    },
+    {
+      title: "Dressmaker-App (on progress)",
       description:
-        "Boutique Application that can be used to order any dress that we want (on progress).",
+        "Boutique Application that can be used to order any dress that we want.",
       technologies: ["Flutter", "Dart", "Firebase", "Android"],
       githubLink: "https://github.com/reddishowo/dressmaker-app",
       image: "/images/dressmaker.png",
