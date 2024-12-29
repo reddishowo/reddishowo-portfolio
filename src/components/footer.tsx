@@ -11,7 +11,7 @@ const Footer = () => {
         <div>
           <span className="footer-title text-lg opacity-100">About Me</span>
           <p className="max-w-md mt-2">
-            Hi! I'm Farriel Arrianta, a passionate developer focused on creating innovative web solutions 
+            Hi! I&apos;m Farriel Arrianta, a passionate developer focused on creating innovative web solutions
             and delivering exceptional user experiences.
           </p>
           {/* Contact Info */}
@@ -44,25 +44,25 @@ const Footer = () => {
         <div>
           <span className="footer-title text-lg opacity-100">Connect With Me</span>
           <div className="flex gap-4">
-            <a 
-              href="https://github.com/reddishowo" 
-              target="_blank" 
+            <a
+              href="https://github.com/reddishowo"
+              target="_blank"
               rel="noopener noreferrer"
               className="btn btn-square btn-outline"
             >
               <Github className="w-5 h-5" />
             </a>
-            <a 
-              href="https://www.linkedin.com/in/farriel-arrianta/" 
-              target="_blank" 
+            <a
+              href="https://www.linkedin.com/in/farriel-arrianta/"
+              target="_blank"
               rel="noopener noreferrer"
               className="btn btn-square btn-outline"
             >
               <Linkedin className="w-5 h-5" />
             </a>
-            <a 
-              href="https://instagram.com/_farriel_" 
-              target="_blank" 
+            <a
+              href="https://instagram.com/_farriel_"
+              target="_blank"
               rel="noopener noreferrer"
               className="btn btn-square btn-outline"
             >
