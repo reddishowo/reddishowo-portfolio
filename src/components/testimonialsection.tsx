@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { Mail } from "lucide-react";
 import emailjs from "emailjs-com";
 
 interface Testimonial {
