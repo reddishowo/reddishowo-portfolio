@@ -146,7 +146,7 @@ const ProjectsSection = () => {
       image: "/images/tailor_webpage.png",
     },
     {
-      title: "Event Management (on progress)",
+      title: "Evenity (on progress)",
       description: "Eventify - Simplify Your Event Management",
       technologies: ["Next.js", "React", "Tailwind CSS", "Laravel", "Axios", "MySQL"],
       githubLink: "https://github.com/reddishowo/event-management-web",
@@ -161,19 +161,20 @@ const ProjectsSection = () => {
       image: "/images/dressmaker.png",
     },
     {
-      title: "Reparin-Mobile",
+      title: "Reparin Mobile / Website",
       description:
         "Mobile Application that focuses on services for fixing gadgets",
       technologies: ["Flutter", "Dart", "Firebase", "Android"],
       githubLink: "https://github.com/hisyam/reparin-mobile",
-      image: "/images/reparinmobile.png",
-    },
-    {
-      title: "Reparin-Website",
-      description: "Reparin website version.",
-      technologies: ["Next.js", "React", "Tailwind CSS"],
       liveLink: "https://reparin.xyz/en",
       image: "/images/reparinlogo.png",
+    },
+    {
+      title: "Ngawitify",
+      description: "a discord-bot for playing music (from youtube link) ",
+      technologies: ["Python", "FFmpeg", "Discord API"],
+      githubLink: "https://github.com/reddishowo/ngawitify",
+      image: "/images/ngawitify.png",
     },
   ];
 
