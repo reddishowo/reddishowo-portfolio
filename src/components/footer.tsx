@@ -74,8 +74,8 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="footer footer-center p-4 bg-base-300 border-t border-base-content/10">
-        <div className="prose">
-          <p>Copyright &apos; {new Date().getFullYear()} - All rights reserved by Farriel Arrianta</p>
+        <div className="prose flex items-center">
+          <p> &copy; {new Date().getFullYear()} - All rights reserved by Farriel Arrianta</p>
         </div>
       </div>
     </footer>
