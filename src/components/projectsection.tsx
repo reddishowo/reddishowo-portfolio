@@ -163,7 +163,7 @@ const ProjectsSection = () => {
     {
       title: "Reparin Mobile / Website",
       description:
-        "Mobile Application that focuses on services for fixing gadgets",
+        "A Web or Mobile Application that focuses on services for fixing gadgets",
       technologies: ["Flutter", "Dart", "Firebase", "Android"],
       githubLink: "https://github.com/hisyam/reparin-mobile",
       liveLink: "https://reparin.xyz/en",
