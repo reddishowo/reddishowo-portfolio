@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import emailjs from "emailjs-com";
+import { Quote } from "lucide-react";
 
 interface Testimonial {
   name: string;
@@ -21,13 +22,45 @@ const TestimonialSection = () => {
       name: "Joko Widodo",
       content: "I was impressed by Farriel's attention to detail and his ability to solve complex problems efficiently.",
     },
-  ]);
+    {
+      name: "Sandiaga Uno",
+      content: "Working with Farriel was a great experience. His innovative approach and technical expertise helped us achieve our goals faster than expected.",
+    },
+    {
+      name: "Erick Thohir",
+      content: "Farriel demonstrated excellent project management skills and delivered high-quality work consistently throughout our collaboration.",
+    },
+    {
+      name: "Prabowo Subianto",
+      content: "His strategic thinking and problem-solving abilities make him stand out. Farriel is definitely someone you want on your team.",
+    },
+    {
+      name: "Ridwan Kamil",
+      content: "The level of professionalism and creativity Farriel brings to each project is remarkable. He exceeded our expectations in every way.",
+    },
+    {
+      name: "Ganjar Pranowo",
+      content: "Farriel's technical knowledge combined with his excellent communication skills made our project implementation seamless.",
+    },
+    {
+      name: "Anies Baswedan",
+      content: "I highly recommend Farriel for any complex development projects. His expertise and dedication are truly commendable.",
+    },
+    {
+      name: "Nadiem Makarim",
+      content: "As a tech leader, I can say that Farriel's coding standards and architectural decisions are top-notch. He's a valuable asset to any development team.",
+    },
+    {
+      name: "William Tanuwijaya",
+      content: "Farriel brings both technical excellence and business understanding to the table. His solutions are always well-thought-out and future-proof."
+    }
+]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState('next');
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [dragOffset, setDragOffset] = useState(0);
-  const dragThreshold = 100; // Minimum drag distance to trigger slide change
+  const dragThreshold = 100;
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -37,7 +70,6 @@ const TestimonialSection = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
       }
     }, 5000);
-
     return () => clearInterval(interval);
   }, [testimonials, isDragging]);
 
@@ -59,14 +91,11 @@ const TestimonialSection = () => {
   const handleDragEnd = () => {
     if (!isDragging) return;
     setIsDragging(false);
-
     if (Math.abs(dragOffset) > dragThreshold) {
       if (dragOffset > 0) {
-        // Dragged right - go to previous
         setDirection('prev');
         setCurrentIndex((prevIndex) => (prevIndex - 1 + testimonials.length) % testimonials.length);
       } else {
-        // Dragged left - go to next
         setDirection('next');
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
       }
@@ -114,21 +143,15 @@ const TestimonialSection = () => {
   return (
     <section id="testimonials" className="bg-base-100 py-16 relative overflow-hidden">
       <div className="container mx-auto max-w-4xl px-4 relative z-10">
-        <h2 className="text-5xl font-bold text-center mb-12 text-primary">
-          Testimonials
-        </h2>
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-bold text-primary mb-2">Testimonials</h2>
+          <p className="text-base-content/70">What people say about my work</p>
+        </div>
         
         <div className="relative w-full h-[300px] mb-12">
-          {/* Drag Hint */}
-          <div className="absolute inset-0 pointer-events-none z-30 flex items-center justify-between px-4 opacity-30">
-            <div className="text-4xl">←</div>
-            <div className="text-4xl">→</div>
-          </div>
-
-          {/* Testimonial Cards */}
           <div 
             ref={containerRef}
-            className="relative w-full h-full perspective px-12 cursor-grab active:cursor-grabbing"
+            className="relative w-full h-full perspective px-4 cursor-grab active:cursor-grabbing"
             onMouseDown={handleDragStart}
             onMouseMove={handleDragMove}
             onMouseUp={handleDragEnd}
@@ -158,14 +181,28 @@ const TestimonialSection = () => {
                     backfaceVisibility: 'hidden'
                   }}
                 >
-                  <div className="card bg-base-200 shadow-xl h-full hover:shadow-2xl transition-shadow duration-300">
-                    <div className="card-body relative overflow-hidden flex flex-col items-center justify-center text-center px-8">
-                      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-primary opacity-75"></div>
-                      <q className="text-base-content text-lg leading-relaxed mb-6 italic">
-                        {testimonial.content}
-                      </q>
-                      <div className="card-actions">
-                        <div className="badge badge-primary badge-outline text-base py-3 px-4">{testimonial.name}</div>
+                  <div className="card bg-base-200 shadow-xl h-full group hover:shadow-2xl transition-all duration-300">
+                    <div className="card-body relative p-8">
+                      <div className="absolute -top-6 left-8">
+                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Quote className="w-6 h-6 text-primary-content" />
+                        </div>
+                      </div>
+                      <div className="pt-6">
+                        <p className="text-base-content text-lg leading-relaxed mb-6">
+                          {testimonial.content}
+                        </p>
+                        <div className="flex items-center">
+                          <div className="avatar placeholder mr-4">
+                            <div className="bg-primary text-primary-content rounded-full w-12">
+                              <span className="text-xl">{testimonial.name.charAt(0)}</span>
+                            </div>
+                          </div>
+                          <div>
+                            <h3 className="font-semibold text-base-content">{testimonial.name}</h3>
+                            <p className="text-sm text-base-content/70">Verified Client</p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -174,7 +211,6 @@ const TestimonialSection = () => {
             })}
           </div>
 
-          {/* Indicators */}
           <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {testimonials.map((_, index) => (
               <button
@@ -183,52 +219,51 @@ const TestimonialSection = () => {
                   setDirection(index > currentIndex ? 'next' : 'prev');
                   setCurrentIndex(index);
                 }}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-primary w-6' : 'bg-primary/30'
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex ? 'w-8 bg-primary' : 'w-2 bg-primary/30'
                 }`}
               />
             ))}
           </div>
         </div>
 
-        <div className="bg-base-100 p-8 rounded-lg shadow-md border border-base-300 max-w-2xl mx-auto">
-          <h3 className="text-2xl font-semibold mb-6 text-primary text-center">Leave Your Testimonial</h3>
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-base-content mb-2 font-medium">
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-2 border border-base-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-base-content bg-base-100"
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor="content" className="block text-base-content mb-2 font-medium">
-                Your Testimonial
-              </label>
-              <textarea
-                id="content"
-                name="content"
-                value={formData.content}
-                onChange={handleChange}
-                rows={4}
-                className="w-full px-4 py-2 border border-base-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-base-content bg-base-100"
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-primary text-primary-content py-3 rounded-md hover:bg-secondary transition-colors focus:ring-2 focus:ring-primary"
-            >
-              Submit Testimonial
-            </button>
-          </form>
+        <div className="card bg-base-200 shadow-lg max-w-2xl mx-auto">
+          <div className="card-body">
+            <h3 className="card-title text-primary justify-center mb-6">Share Your Experience</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Your Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="input input-bordered w-full"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Your Testimonial</span>
+                </label>
+                <textarea
+                  name="content"
+                  value={formData.content}
+                  onChange={handleChange}
+                  className="textarea textarea-bordered h-24"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                className="btn btn-primary w-full"
+              >
+                Submit Testimonial
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </section>
