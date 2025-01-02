@@ -15,10 +15,23 @@ const ScrollToTop = () => {
   };
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    if ('scrollBehavior' in document.documentElement.style) {
+      // Browser mendukung animasi scroll smooth
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    } else {
+      // Fallback untuk browser lama
+      const interval = setInterval(() => {
+        const scrollStep = Math.max(window.pageYOffset / 10, 10);
+        if (window.pageYOffset === 0) {
+          clearInterval(interval);
+        } else {
+          window.scrollBy(0, -scrollStep);
+        }
+      }, 16); // Setiap frame ~16ms untuk 60fps
+    }
   };
 
   useEffect(() => {
@@ -34,18 +47,13 @@ const ScrollToTop = () => {
         <button
           onClick={scrollToTop}
           className={`
+            btn btn-circle btn-primary
             fixed bottom-6 right-6
-            w-12 h-12
-            bg-gray-800 
-            text-white
-            rounded-full
-            flex items-center justify-center
             shadow-lg
             transition-all duration-300
-            hover:bg-gray-700
             hover:scale-110
             ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-            z-50 // Menambahkan z-index yang lebih tinggi
+            z-50
           `}
           aria-label="Scroll to top"
         >
